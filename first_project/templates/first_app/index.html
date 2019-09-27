@@ -3,11 +3,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>First Static App</title>
+    <title>Django Level Two</title>
     <link rel="stylesheet" href="{% static "css/newstyle.css" %}">
   </head>
   <body>
-    <h1>Hello, This is a pictore of a book!</h1>
-    <img src="{% static "images/book.jpeg" alt="Uh Oh! Didnt Show"%}"
+    <h1>Hi welcome to Django Level Two</h1>
+    <h2>Here are your access records:</h2>
+
+    <div class="djangtwo">
+      {% if access_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+
+        {% for acc in access_records %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>NO ACCESS RECORD FOUND!</p>
+      {% endif %}
+    </div>
   </body>
 </html>
