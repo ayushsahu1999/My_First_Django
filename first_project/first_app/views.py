@@ -30,7 +30,8 @@ def index(request):
 #     return render(request, 'first_app/form_page.html', {'form':form})
 
 def index(request):
-    return render(request, 'first_app/frontpage.html')
+    context_dict = {'text':'hello world', 'number':100}
+    return render(request, 'first_app/frontpage.html', context_dict)
 
 def other(request):
     return render(request, 'first_app/other.html')
