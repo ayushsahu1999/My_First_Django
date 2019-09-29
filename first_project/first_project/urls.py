@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^first_app/', include('first_app.urls')),
-    url(r'^formpage/', views.form_name_view, name='form_name'),
+    #url(r'^formpage/', views.form_name_view, name='form_name'),
 ]
