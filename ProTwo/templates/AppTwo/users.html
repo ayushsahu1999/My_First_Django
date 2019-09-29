@@ -3,26 +3,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static "css/newstyle.css" %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Assignment 3</title>
   </head>
   <body>
-    <div class="cando">
-      {% if users %}
-      <ol>
-        {% for user in users %}
-        <li>User Info:
-          <ul>
-            <li>First name: {{ user.first_name }}</li>
-            <li>Last name: {{ user.last_name }}</li>
-            <li>Email id: {{ user.email }}</li>
-          </ul>
-        </li>
-        {% endfor %}
-      </ol>
-      {% else %}
-      <p>No Users Found</p>
-      {% endif %}
+    <div class="container">
+      <h1>Please Signup here!</h1>
+      <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
     </div>
   </body>
 </html>
