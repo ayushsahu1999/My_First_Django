@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <title>BASE</title>
+    <title></title>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+          <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
           <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
-          <li><a class="navbar-link" href="{% url 'first_app:other' %}">OTHER</a></li>
+          <li><a class="navbar-link" href="{% url 'first_app:register' %}">REGISTER</a></li>
         </ul>
       </div>
     </nav>
     <div class="container">
-      {% block body-block %}
+      {% block body_block %}
 
       <!-- Anything outside will be inherited -->
       {% endblock %}
