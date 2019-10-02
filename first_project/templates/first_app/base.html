@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <title></title>
   </head>
   <body>
@@ -12,6 +13,13 @@
           <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
           <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
           <li><a class="navbar-link" href="{% url 'first_app:register' %}">REGISTER</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+
+          {% else %}
+          <li><a class="navbar-link" href="{% url 'first_app:user_login' %}">Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
